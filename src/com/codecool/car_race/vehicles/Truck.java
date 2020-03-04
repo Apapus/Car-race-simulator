@@ -12,10 +12,15 @@ public class Truck extends Vehicle {
     public Truck() {
         Random r = new Random();
         this.name = String.valueOf(r.nextInt(1000));
+        this.normalSpeed = 100;
     }
 
     public String getName() {
         return name;
+    }
+
+    public int getNormalSpeed() {
+        return this.normalSpeed;
     }
 
     @Override

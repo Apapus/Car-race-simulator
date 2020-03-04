@@ -26,11 +26,17 @@ public class Main {
     public static void main(String[] args) {
         Car car1 = new Car();
         System.out.println(car1.getName());
+        System.out.println(car1.getNormalSpeed());
+        System.out.println(car1.getLimitedSpeed());
 
         Motorcycle mot1 = new Motorcycle();
         System.out.println(mot1.getName());
+        System.out.println(mot1.getNormalSpeed());
+        System.out.println(mot1.getLimitedSpeed());
+
         Truck truck1 = new Truck();
         System.out.println(truck1.getName());
+        System.out.println(truck1.getNormalSpeed());
 //        Race race = new Race();
 //        createVehicles(race);
 //

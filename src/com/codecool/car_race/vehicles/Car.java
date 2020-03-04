@@ -1,25 +1,31 @@
 package com.codecool.car_race.vehicles;
 
 import com.codecool.car_race.Race;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 public class Car extends Vehicle {
     private final static String[] CARNAMES = {"Virtue", "Barrage", "Alabaster", "Moonlight", "Enigma", "Dynamo", "Celestial",
                                 "Daydream", "Flow", "Tigress", "Wish", "Charm", "Reflect", "Portrait", "Vulture",
                                 "Essence", "Capital", "Blaze", "Evolution", "Ferocity"};
-    private int normalSpeed; // the normal speed of the car. Set to a random number in the constructor between 80-110km/h.
+//    private int normalSpeed; // the normal speed of the car. Set to a random number in the constructor between 80-110km/h.
 
     public Car() {
         Random r = new Random();
-        this.name = CARNAMES[r.nextInt(9)] + " " + CARNAMES[r.nextInt(19)].toLowerCase();
+        this.name = CARNAMES[r.nextInt(19)] + " " + CARNAMES[r.nextInt(19)].toLowerCase();
+        this.normalSpeed = r.nextInt((110 - 80) + 1) + 80;
+        this.limitedSpeed = 75;
     }
 
     public String getName() {
         return name;
+    }
+
+    public int getNormalSpeed() {
+        return normalSpeed;
+    }
+
+    public int getLimitedSpeed() {
+        return limitedSpeed;
     }
 
     @Override
