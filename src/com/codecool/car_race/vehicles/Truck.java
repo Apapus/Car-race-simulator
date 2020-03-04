@@ -2,10 +2,21 @@ package com.codecool.car_race.vehicles;
 
 import com.codecool.car_race.Race;
 
+import java.util.Random;
+
 public class Truck extends Vehicle {
     private int speed = 100;
 //    private String name;
     private int breakdownTurnsLeft; // holds how long its still broken down.
+
+    public Truck() {
+        Random r = new Random();
+        this.name = String.valueOf(r.nextInt(1000));
+    }
+
+    public String getName() {
+        return name;
+    }
 
     @Override
     public void prepareForLap(Race race) {
