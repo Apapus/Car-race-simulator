@@ -1,6 +1,8 @@
 package com.codecool.car_race;
 
 
+import com.codecool.car_race.vehicles.Car;
+
 public class Main {
 
     /**
@@ -18,10 +20,12 @@ public class Main {
      *             It is unused.
      */
     public static void main(String[] args) {
-        Race race = new Race();
-        createVehicles(race);
-
-        race.simulateRace();
-        race.printRaceResults();
+        Car car1 = new Car();
+        System.out.println(car1.getName());
+//        Race race = new Race();
+//        createVehicles(race);
+//
+//        race.simulateRace();
+//        race.printRaceResults();
     }
 }
