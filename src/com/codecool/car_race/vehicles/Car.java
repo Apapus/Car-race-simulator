@@ -19,18 +19,6 @@ public class Car extends Vehicle {
         return name;
     }
 
-    public int getSpeed() {
-        return speed;
-    }
-
-    public int getNormalSpeed() {
-        return normalSpeed;
-    }
-
-    public int getLimitedSpeed() {
-        return limitedSpeed;
-    }
-
     // generate car name and prevent equality of words in a name
     private String createCarName(Random r){
         String carName = "";
@@ -41,7 +29,12 @@ public class Car extends Vehicle {
         }else{
             createCarName(r);
         }
-        return carName;
+
+        if(!carName.equals("")) {
+            return carName;
+        }else{
+            return createCarName(r);
+        }
     }
 
     @Override
@@ -52,12 +45,4 @@ public class Car extends Vehicle {
             this.speed = this.normalSpeed;
         }
     }
-
-//    @Override
-//    public void moveForAnHour() {
-//        distanceTraveled+=speed;
-//    }
-//    private String name; // Make a list from the words here: http://www.fantasynamegenerators.com/car-names.php and pick 2 randomly for each instance.
-//    private int distanceTraveled; // holds the summarized distance traveled in the race.
-
 }

@@ -13,10 +13,6 @@ public abstract class Vehicle {
         return name;
     }
 
-    public int getSpeed() {
-        return speed;
-    }
-
     public int getDistanceTraveled() {
         return distanceTraveled;
     }

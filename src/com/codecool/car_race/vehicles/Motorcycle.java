@@ -1,7 +1,6 @@
 package com.codecool.car_race.vehicles;
 
 import com.codecool.car_race.Race;
-
 import java.util.Random;
 
 public class Motorcycle extends Vehicle {
@@ -19,14 +18,6 @@ public class Motorcycle extends Vehicle {
         return name;
     }
 
-    public int getSpeed() {
-        return this.speed;
-    }
-
-    public int getLimitedSpeed() {
-        return this.limitedSpeed;
-    }
-
     @Override
     public void prepareForLap(Race race) {
         if(race.getWeather().isRaining()) {
@@ -35,11 +26,4 @@ public class Motorcycle extends Vehicle {
             speed = normalSpeed;
         }
     }
-
-//    @Override
-//    public void moveForAnHour() {
-//
-//    }
-//    private String name; // Are called "Motorcycle 1", "Motorcycle 2", "Motorcycle 3",... Unique.
-
 }
