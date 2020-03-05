@@ -5,7 +5,6 @@ import com.codecool.car_race.Race;
 import java.util.Random;
 
 public class Truck extends Vehicle {
-    private int speed = 100;
 //    private String name;
     private int breakdownTurnsLeft; // holds how long its still broken down.
 

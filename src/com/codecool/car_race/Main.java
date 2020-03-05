@@ -37,7 +37,8 @@ public class Main {
         Truck truck1 = new Truck();
         System.out.println(truck1.getName());
         System.out.println(truck1.getNormalSpeed());
-//        Race race = new Race();
+
+        Race race = new Race();
 //        createVehicles(race);
 //
 //        race.simulateRace();

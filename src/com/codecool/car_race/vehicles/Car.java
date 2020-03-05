@@ -7,7 +7,6 @@ public class Car extends Vehicle {
     private final static String[] CARNAMES = {"Virtue", "Barrage", "Alabaster", "Moonlight", "Enigma", "Dynamo", "Celestial",
                                 "Daydream", "Flow", "Tigress", "Wish", "Charm", "Reflect", "Portrait", "Vulture",
                                 "Essence", "Capital", "Blaze", "Evolution", "Ferocity"};
-//    private int normalSpeed; // the normal speed of the car. Set to a random number in the constructor between 80-110km/h.
 
     public Car() {
         Random r = new Random();
@@ -30,7 +29,11 @@ public class Car extends Vehicle {
 
     @Override
     public void prepareForLap(Race race) {
-
+        if(race.isThereABrokenTruck()) {
+            this.speed = this.limitedSpeed;
+        }else{
+            this.speed = this.normalSpeed;
+        }
     }
 
     @Override
