@@ -19,8 +19,8 @@ public class Motorcycle extends Vehicle {
         return name;
     }
 
-    public int getNormalSpeed() {
-        return this.normalSpeed;
+    public int getSpeed() {
+        return this.speed;
     }
 
     public int getLimitedSpeed() {
@@ -29,13 +29,17 @@ public class Motorcycle extends Vehicle {
 
     @Override
     public void prepareForLap(Race race) {
-
+        if(race.getWeather().isRaining()) {
+            speed = limitedSpeed;
+        }else{
+            speed = normalSpeed;
+        }
     }
 
-    @Override
-    public void moveForAnHour() {
-
-    }
+//    @Override
+//    public void moveForAnHour() {
+//
+//    }
 //    private String name; // Are called "Motorcycle 1", "Motorcycle 2", "Motorcycle 3",... Unique.
 
 }

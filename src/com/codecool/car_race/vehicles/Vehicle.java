@@ -9,6 +9,21 @@ public abstract class Vehicle {
     protected int limitedSpeed;
     protected int distanceTraveled;
 
+    public String getName() {
+        return name;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public int getDistanceTraveled() {
+        return distanceTraveled;
+    }
+
     public abstract void prepareForLap(Race race);
-    public abstract void moveForAnHour();
+
+    public void moveForAnHour(){
+        distanceTraveled+= speed;
+    }
 }

@@ -18,19 +18,19 @@ public class Truck extends Vehicle {
         return name;
     }
 
-    public int getNormalSpeed() {
-        return this.normalSpeed;
+    public int getSpeed() {
+        return this.speed;
     }
 
     @Override
     public void prepareForLap(Race race) {
-
+        speed = normalSpeed;
     }
 
-    @Override
-    public void moveForAnHour() {
-
-    }
+//    @Override
+//    public void moveForAnHour() {
+//
+//    }
 //    private int distanceTraveled; // holds the summarized distance traveled in the race.
 
 }
