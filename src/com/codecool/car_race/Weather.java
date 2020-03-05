@@ -11,11 +11,7 @@ public class Weather {
 
     public void setRaining(){// 30% chance of rain.
         Random r = new Random();
-        if (r.nextInt(100) <= 30){
-            isRain = true;
-        }else{
-            isRain = false;
-        }
+        isRain = r.nextInt(100) <= 30;
     }
 
     public boolean isRaining(){// is it raining currently.
