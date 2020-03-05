@@ -32,7 +32,7 @@ public class Race {
     }
 
     private List<Vehicle> createVehicles() {
-        List<Vehicle> vehicles = new ArrayList<Vehicle>();
+        List<Vehicle> vehicles = new ArrayList<>();
         for(int i = 0; i < 10; i++){
             vehicles.add(new Car());
             vehicles.add(new Motorcycle());
@@ -41,13 +41,31 @@ public class Race {
         return vehicles;
     }
 
+    public boolean isThereABrokenTruck(){
+        return isThereABrokenTruck;
+    }
+
+    public void startRace(Race race){
+        for(int i =1; i <= 50; i++){
+            for(Vehicle vehicle : race.getVehicles()){
+                if(vehicle instanceof Truck){
+                    if (((Truck) vehicle).getBreakdownTurnsLeft() > 0){
+                        System.out.println("Lap: " + i + " truck " + vehicle.getName() + " broken");
+                        race.setThereABrokenTruck(true);
+                    }else{
+                        race.setThereABrokenTruck(false);
+                    }
+                }
+                vehicle.prepareForLap(race);
+                vehicle.moveForAnHour();
+            }
+        }
+    }
+
     public void printRaceResults(){
         for(Vehicle vehicle : vehicles) {
             System.out.println(vehicle.getName() + " : " + vehicle.getDistanceTraveled());
         }
     }
 
-    public boolean isThereABrokenTruck(){
-        return isThereABrokenTruck;
-    }
 }
