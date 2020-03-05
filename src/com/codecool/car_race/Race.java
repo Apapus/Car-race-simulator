@@ -47,18 +47,18 @@ public class Race {
 
     public void startRace(Race race){
         for(int i =1; i <= 50; i++){
+            boolean isBrokenTrack = false;
             for(Vehicle vehicle : race.getVehicles()){
                 if(vehicle instanceof Truck){
                     if (((Truck) vehicle).getBreakdownTurnsLeft() > 0){
                         System.out.println("Lap: " + i + " truck " + vehicle.getName() + " broken");
-                        race.setThereABrokenTruck(true);
-                    }else{
-                        race.setThereABrokenTruck(false);
+                        isBrokenTrack = true;
                     }
                 }
                 vehicle.prepareForLap(race);
                 vehicle.moveForAnHour();
             }
+            race.setThereABrokenTruck(isThereABrokenTruck);
         }
     }
 
