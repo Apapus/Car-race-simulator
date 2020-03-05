@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Truck extends Vehicle {
 //    private String name;
-    private int breakdownTurnsLeft; // holds how long its still broken down.
+    private int breakdownTurnsLeft = 0; // holds how long its still broken down.
 
     public Truck() {
         Random r = new Random();
@@ -22,9 +22,23 @@ public class Truck extends Vehicle {
         return this.speed;
     }
 
+    public int getBreakdownTurnsLeft() {
+        return breakdownTurnsLeft;
+    }
+
     @Override
     public void prepareForLap(Race race) {
-        speed = normalSpeed;
+        Random r = new Random();
+        if(r.nextInt(100) < 5){
+           breakdownTurnsLeft = 2;
+        }
+
+        if(breakdownTurnsLeft <= 0){
+            speed = normalSpeed;
+        }else{
+            speed = 0;
+            breakdownTurnsLeft--;
+        }
     }
 
 //    @Override

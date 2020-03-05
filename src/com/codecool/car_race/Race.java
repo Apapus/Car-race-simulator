@@ -28,6 +28,10 @@ public class Race {
         return vehicles;
     }
 
+    public void setThereABrokenTruck(boolean thereABrokenTruck) {
+        isThereABrokenTruck = thereABrokenTruck;
+    }
+
     private List<Vehicle> createVehicles() {
         List<Vehicle> vehicles = new ArrayList<Vehicle>();
         vehicles.add(new Car());

@@ -35,6 +35,14 @@ public class Main {
         for(int i =1; i <= 50; i++){
             for(Vehicle vehicle : race.getVehicles()){
                 vehicle.prepareForLap(race);
+                if(vehicle instanceof Truck){
+                    if (((Truck) vehicle).getBreakdownTurnsLeft() > 0){
+                        System.out.println("Lap: " + i + " truck broken");
+                        race.setThereABrokenTruck(true);
+                    }else{
+                        race.setThereABrokenTruck(false);
+                    }
+                }
                 vehicle.moveForAnHour();
             }
         }
