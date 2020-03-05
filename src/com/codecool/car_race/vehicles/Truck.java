@@ -12,10 +12,6 @@ public class Truck extends Vehicle {
         this.normalSpeed = 100;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public int getBreakdownTurnsLeft() {
         return breakdownTurnsLeft;
     }

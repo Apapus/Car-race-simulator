@@ -13,6 +13,8 @@ public class Weather {
         Random r = new Random();
         if (r.nextInt(100) <= 30){
             isRain = true;
+        }else{
+            isRain = false;
         }
     }
 

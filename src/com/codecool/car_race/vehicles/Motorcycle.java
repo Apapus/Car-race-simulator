@@ -14,10 +14,6 @@ public class Motorcycle extends Vehicle {
         this.limitedSpeed = this.normalSpeed - r.nextInt((50 - 5) + 1) + 5;
     }
 
-    public String getName() {
-        return name;
-    }
-
     @Override
     public void prepareForLap(Race race) {
         if(race.getWeather().isRaining()) {

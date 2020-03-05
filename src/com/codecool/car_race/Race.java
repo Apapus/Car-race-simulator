@@ -14,7 +14,6 @@ public class Race {
 
     public Race() {
         this.weather = new Weather();
-        System.out.println("Rain: " + weather.isRaining());
         vehicles = createVehicles();
 
     }
@@ -45,20 +44,23 @@ public class Race {
         return isThereABrokenTruck;
     }
 
-    public void startRace(Race race){
+    public void startRace(){
         for(int i =1; i <= 50; i++){
+            weather.setRaining();
+            System.out.print("Lap: " + i + ", Rain: " + weather.isRaining());
             boolean isBrokenTrack = false;
-            for(Vehicle vehicle : race.getVehicles()){
+            for(Vehicle vehicle : this.getVehicles()){
                 if(vehicle instanceof Truck){
                     if (((Truck) vehicle).getBreakdownTurnsLeft() > 0){
-                        System.out.println("Lap: " + i + " truck " + vehicle.getName() + " broken");
+                        System.out.print(", Truck " + vehicle.getName() + " broken");
                         isBrokenTrack = true;
                     }
                 }
-                vehicle.prepareForLap(race);
+                vehicle.prepareForLap(this);
                 vehicle.moveForAnHour();
             }
-            race.setThereABrokenTruck(isThereABrokenTruck);
+            this.setThereABrokenTruck(isBrokenTrack);
+            System.out.println();
         }
     }
 
