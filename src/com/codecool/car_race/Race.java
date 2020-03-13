@@ -49,14 +49,15 @@ public class Race {
             weather.setRaining();
             System.out.print("Lap: " + i + ", Rain: " + weather.isRaining());
             boolean isBrokenTrack = false;
+            // make sure you only use Vehicle.moveForAnHour() in the simulation's for loop and you don't need to check the vehicles for the exact type
             for(Vehicle vehicle : this.getVehicles()){
                 if(vehicle instanceof Truck){
+                    vehicle.prepareForLap(this);
                     if (((Truck) vehicle).getBreakdownTurnsLeft() > 0){
                         System.out.print(", Truck " + vehicle.getName() + " broken");
                         isBrokenTrack = true;
                     }
                 }
-                vehicle.prepareForLap(this);
                 vehicle.moveForAnHour();
             }
             this.setThereABrokenTruck(isBrokenTrack);
