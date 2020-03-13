@@ -22,7 +22,7 @@ public class Truck extends Vehicle {
         if(r.nextInt(100) < 5){
            breakdownTurnsLeft = 2;
            speed = 0;
-           return;
+//           return;
         }
 
         if(breakdownTurnsLeft == 0){
@@ -31,5 +31,6 @@ public class Truck extends Vehicle {
             speed = 0;
             breakdownTurnsLeft--;
         }
+//       throw new IllegalStateException(); // for test proposes only
     }
 }

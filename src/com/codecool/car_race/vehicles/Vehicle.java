@@ -15,7 +15,7 @@ public abstract class Vehicle {
         return name;
     }
 
-    // todo create abstract generate name method for all vehicles
+    // todo create abstract generate name method for all vehicles DONE
 
     public int getDistanceTraveled() {
         return distanceTraveled;
