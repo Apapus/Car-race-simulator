@@ -3,6 +3,8 @@ package com.codecool.car_race;
 import com.codecool.car_race.vehicles.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Race {
@@ -55,8 +57,20 @@ public class Race {
         }
     }
 
+    // sort winners
+    private List<Vehicle> sortWinners(List<Vehicle> vehicles){
+        Collections.sort(vehicles, new Comparator<Vehicle>() {
+            @Override
+            public int compare(Vehicle o1, Vehicle o2) {
+                return Integer.compare(o2.getDistanceTraveled(), o1.getDistanceTraveled());
+            }
+        });
+        return vehicles;
+    }
+
+    // print race results
     public void printRaceResults(){
-        for(Vehicle vehicle : vehicles) {
+        for(Vehicle vehicle : sortWinners(vehicles)) {
             System.out.println(vehicle.getName() + " : " + vehicle.getDistanceTraveled());
         }
     }
