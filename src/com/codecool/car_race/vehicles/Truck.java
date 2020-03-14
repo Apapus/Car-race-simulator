@@ -30,7 +30,7 @@ public class Truck extends Vehicle{
 
         if(breakdownTurnsLeft == 0){
             speed = normalSpeed;
-        }else if(breakdownTurnsLeft >0){
+        }else if(breakdownTurnsLeft > 0){
             speed = 0;
             breakdownTurnsLeft--;
         }

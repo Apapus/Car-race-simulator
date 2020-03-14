@@ -18,37 +18,22 @@ public class Car extends Vehicle {
         this.limitedSpeed = 75;
     }
 
+    // generate car name and prevent equality of words in a name
     @Override
     protected String createName() {
         Random r = new Random();
-        String carName = "";
+        String carName;
         // nit remove magic numbers DONE
         String name1 = CARNAMES[r.nextInt(CARNAMES.length)];
         String name2 = CARNAMES[r.nextInt(CARNAMES.length)];
         if(!name1.equals(name2)){
             carName =  name1 + " " + name2.toLowerCase();
         }else{
-            // todo think about it!
+            // todo think about it! return is very essential
             return createName();
         }
         return carName;
     }
-
-    // generate car name and prevent equality of words in a name
-//    private String createCarName(Random r){
-//        String carName = "";
-//        // nit remove magic numbers DONE
-//        String name1 = CARNAMES[r.nextInt(CARNAMES.length)];
-//        String name2 = CARNAMES[r.nextInt(CARNAMES.length)];
-//        if(!name1.equals(name2)){
-//            carName =  name1 + " " + name2.toLowerCase();
-//        }else{
-//            // todo think about it!
-//            return createCarName(r);
-//        }
-//
-//        return carName;
-//    }
 
     @Override
     public void prepareForLap(boolean isRaining, boolean isBrokenTruck) {

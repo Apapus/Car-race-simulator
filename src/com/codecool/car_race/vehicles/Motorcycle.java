@@ -4,7 +4,7 @@ import com.codecool.car_race.Race;
 import java.util.Random;
 
 public class Motorcycle extends Vehicle{
-    private static int motorcycleNumber = 1; // The number of the instance created. Used for its name.
+    private static int motorcycleNumber = 1; // The number of the instance. Used for its name.
 
     public Motorcycle() {
         super();

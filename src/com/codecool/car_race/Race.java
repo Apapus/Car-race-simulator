@@ -16,10 +16,6 @@ public class Race {
 
     }
 
-    public Weather getWeather() {
-        return weather;
-    }
-
     public List<Vehicle> getVehicles() {
         return vehicles;
     }
@@ -36,10 +32,6 @@ public class Race {
             vehicles.add(new Truck());
         }
         return vehicles;
-    }
-
-    public boolean isThereABrokenTruck(){
-        return isThereABrokenTruck;
     }
 
     public void startRace(){

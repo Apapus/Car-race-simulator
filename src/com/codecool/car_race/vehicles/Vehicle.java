@@ -12,7 +12,7 @@ public abstract class Vehicle {
         this.name = createName();
     }
 
-    // Add abstract method
+    // Added abstract method
     protected abstract String createName();
 
     public String getName() {
@@ -25,7 +25,6 @@ public abstract class Vehicle {
         return distanceTraveled;
     }
 
-    // for truck
     public abstract void prepareForLap(boolean isRaining, boolean isBrokenTruck);
 
     public void moveForAnHour(){
