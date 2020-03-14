@@ -10,6 +10,13 @@ public abstract class Vehicle {
     // todo create constructor for all vehicles which will be inherited
 
 
+    public Vehicle() {
+        this.name = createName();
+    }
+
+    // Add abstract method
+    protected abstract String createName();
+
     public String getName() {
         return name;
     }

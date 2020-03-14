@@ -7,11 +7,17 @@ public class Motorcycle extends Vehicle{
     private static int motorcycleNumber = 1; // The number of the instance created. Used for its name.
 
     public Motorcycle() {
-        this.name = "Motorcycle " + motorcycleNumber;
-        motorcycleNumber++;
+        this.name = createName();
         Random r = new Random();
         this.normalSpeed = 100;
         this.limitedSpeed = this.normalSpeed - r.nextInt((50 - 5) + 1) + 5;
+    }
+
+    @Override
+    protected String createName() {
+        String motorcycleName = "Motorcycle " + motorcycleNumber;
+        motorcycleNumber++;
+        return motorcycleName;
     }
 
     @Override

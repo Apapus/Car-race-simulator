@@ -8,16 +8,18 @@ public class Car extends Vehicle {
     private final int MAX_NORMAL_SPEED = 110;
     private final int MIN_NORMAL_SPEED = 80;
 // todo move to constructor in upper class
+
     public Car() {
         Random r = new Random();
-        this.name = createCarName(r);
+        this.name = createName();
         // nit remove magic numbers DONE
         this.normalSpeed = r.nextInt((MAX_NORMAL_SPEED - MIN_NORMAL_SPEED) + 1) + MIN_NORMAL_SPEED;
         this.limitedSpeed = 75;
     }
 
-    // generate car name and prevent equality of words in a name
-    private String createCarName(Random r){
+    @Override
+    protected String createName() {
+        Random r = new Random();
         String carName = "";
         // nit remove magic numbers DONE
         String name1 = CARNAMES[r.nextInt(CARNAMES.length)];
@@ -26,11 +28,26 @@ public class Car extends Vehicle {
             carName =  name1 + " " + name2.toLowerCase();
         }else{
             // todo think about it!
-            return createCarName(r);
+            return createName();
         }
-
         return carName;
     }
+
+    // generate car name and prevent equality of words in a name
+//    private String createCarName(Random r){
+//        String carName = "";
+//        // nit remove magic numbers DONE
+//        String name1 = CARNAMES[r.nextInt(CARNAMES.length)];
+//        String name2 = CARNAMES[r.nextInt(CARNAMES.length)];
+//        if(!name1.equals(name2)){
+//            carName =  name1 + " " + name2.toLowerCase();
+//        }else{
+//            // todo think about it!
+//            return createCarName(r);
+//        }
+//
+//        return carName;
+//    }
 
     @Override
     public void prepareForLap(boolean isRaining, boolean isBrokenTruck) {

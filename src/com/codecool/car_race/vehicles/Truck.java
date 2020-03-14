@@ -7,8 +7,14 @@ public class Truck extends Vehicle{
 
     public Truck() {
         Random r = new Random();
-        this.name = String.valueOf(r.nextInt(1000));
+        this.name = createName();
         this.normalSpeed = 100;
+    }
+
+    @Override
+    protected String createName() {
+        Random r = new Random();
+        return String.valueOf(r.nextInt(1000));
     }
 
     public int getBreakdownTurnsLeft() {
