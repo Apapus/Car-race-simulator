@@ -9,11 +9,12 @@ public class Car extends Vehicle {
     private final int MIN_NORMAL_SPEED = 80;
 // todo move to constructor in upper class
 
+
     public Car() {
-        Random r = new Random();
-        this.name = createName();
+        super();
+//        this.name = name;
         // nit remove magic numbers DONE
-        this.normalSpeed = r.nextInt((MAX_NORMAL_SPEED - MIN_NORMAL_SPEED) + 1) + MIN_NORMAL_SPEED;
+        this.normalSpeed = new Random().nextInt((MAX_NORMAL_SPEED - MIN_NORMAL_SPEED) + 1) + MIN_NORMAL_SPEED;
         this.limitedSpeed = 75;
     }
 

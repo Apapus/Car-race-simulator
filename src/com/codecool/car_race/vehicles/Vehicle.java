@@ -7,9 +7,7 @@ public abstract class Vehicle {
     protected int limitedSpeed;
     protected int distanceTraveled;
 
-    // todo create constructor for all vehicles which will be inherited
-
-
+    // todo create constructor for all vehicles which will be inherited DONE
     public Vehicle() {
         this.name = createName();
     }

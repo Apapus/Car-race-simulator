@@ -6,15 +6,14 @@ public class Truck extends Vehicle{
     private int breakdownTurnsLeft = 0; // holds how long its still broken down.
 
     public Truck() {
-        Random r = new Random();
-        this.name = createName();
+        super();
+//        this.name = createName();
         this.normalSpeed = 100;
     }
 
     @Override
     protected String createName() {
-        Random r = new Random();
-        return String.valueOf(r.nextInt(1000));
+        return String.valueOf(new Random().nextInt(1000));
     }
 
     public int getBreakdownTurnsLeft() {
@@ -23,8 +22,7 @@ public class Truck extends Vehicle{
 
     @Override
     public void prepareForLap(boolean isRaining, boolean isBrokenTruck) {
-        Random r = new Random();
-        if(r.nextInt(100) < 5){
+        if(new Random().nextInt(100) < 5){
            breakdownTurnsLeft = 2;
            speed = 0;
             return;
