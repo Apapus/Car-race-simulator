@@ -1,6 +1,4 @@
 package com.codecool.car_race.vehicles;
-
-import com.codecool.car_race.Race;
 import java.util.Random;
 
 public class Car extends Vehicle {
@@ -35,8 +33,8 @@ public class Car extends Vehicle {
     }
 
     @Override
-    public void prepareForLap(Race race) {
-        if(race.isThereABrokenTruck()) {
+    public void prepareForLap(boolean isRaining, boolean isBrokenTruck) {
+        if(isBrokenTruck) {
             this.speed = this.limitedSpeed;
         }else{
             this.speed = this.normalSpeed;

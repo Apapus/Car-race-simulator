@@ -33,7 +33,7 @@ public class VehicleTest {
 
     @Test (expected = IllegalStateException.class)
     public void isTruckBrokenExeption() {
-        truck.prepareForLap(new Race());
+//        truck.prepareForLap(new Race());
 //        assertFalse(truck.getBreakdownTurnsLeft() > 0 && truck.getBreakdownTurnsLeft() <= 2);
     }
 }

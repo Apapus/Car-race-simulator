@@ -1,9 +1,7 @@
 package com.codecool.car_race;
 
-import com.codecool.car_race.vehicles.Car;
-import com.codecool.car_race.vehicles.Motorcycle;
-import com.codecool.car_race.vehicles.Truck;
-import com.codecool.car_race.vehicles.Vehicle;
+import com.codecool.car_race.vehicles.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,8 +49,8 @@ public class Race {
             boolean isBrokenTrack = false;
             // make sure you only use Vehicle.moveForAnHour() in the simulation's for loop and you don't need to check the vehicles for the exact type
             for(Vehicle vehicle : this.getVehicles()){
+                vehicle.prepareForLap(weather.isRaining(), isBrokenTrack);
                 if(vehicle instanceof Truck){
-                    vehicle.prepareForLap(this);
                     if (((Truck) vehicle).getBreakdownTurnsLeft() > 0){
                         System.out.print(", Truck " + vehicle.getName() + " broken");
                         isBrokenTrack = true;

@@ -1,9 +1,8 @@
 package com.codecool.car_race.vehicles;
 
-import com.codecool.car_race.Race;
 import java.util.Random;
 
-public class Truck extends Vehicle {
+public class Truck extends Vehicle{
     private int breakdownTurnsLeft = 0; // holds how long its still broken down.
 
     public Truck() {
@@ -17,12 +16,12 @@ public class Truck extends Vehicle {
     }
 
     @Override
-    public void prepareForLap(Race race) {
+    public void prepareForLap(boolean isRaining, boolean isBrokenTruck) {
         Random r = new Random();
         if(r.nextInt(100) < 5){
            breakdownTurnsLeft = 2;
            speed = 0;
-           return;
+            return;
         }
 
         if(breakdownTurnsLeft == 0){
@@ -31,6 +30,6 @@ public class Truck extends Vehicle {
             speed = 0;
             breakdownTurnsLeft--;
         }
-//       throw new IllegalStateException(); // for test proposes only
+        //       throw new IllegalStateException(); // for test proposes only
     }
 }
